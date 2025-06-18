@@ -2,13 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 from estilos_visuales import EstilosVisuales
 
-# Función recursiva pura (solo cálculo)
 def recursive_caesar_hash(s, n):
     if n == 0:
         return 0
-    return (recursive_caesar_hash(s, n - 1) + (ord(s[(n - 1) % len(s)]) + n)) % 256
+    return (recursive_caesar_hash(s, n - 1) + (ord(s[(n - 1)]) + n)) % 256
 
-# Función recursiva para cálculo y registro de pasos
 def recursive_caesar_hash_con_pasos(s, n, pasos):
     if n == 0:
         pasos.append("H(0) = 0")
@@ -34,7 +32,7 @@ def cifrar():
         resultado_cifrar.set("⚠️ La posición debe ser un número entero")
         text_pasos.config(state="normal")
         text_pasos.delete("1.0", tk.END)
-        text_pasos.insert(tk.END, "❌ Error: Posición inválida. Debe ser un entero.")
+        text_pasos.insert(tk.END, "✖️Error: Posición inválida. Debe ser un entero.")
         text_pasos.config(state="disabled")
         return
 
@@ -46,17 +44,17 @@ def cifrar():
 
     text_pasos.config(state="normal")
     text_pasos.delete("1.0", tk.END)
-    text_pasos.insert(tk.END, "H(n)=(H(n-1)+ord(s[(n-1)modL])+n)mod256:\n\n")
+    text_pasos.insert(tk.END, "H(n)=(H(n-1)+ord(s(n-1))+n)mod256:\n\n")
     text_pasos.insert(tk.END, "\n".join(pasos))
     text_pasos.insert(tk.END, f"\n\n-Resultado final: {hash_resultado}")
     text_pasos.config(state="disabled") 
 
 ventana = tk.Tk()
-ventana.title("🔐 Recursive Function Caesar Shift Hash")
+ventana.title("🔐 Funcion Recursiva de Caesar mediante ASCI")
 ventana.resizable(False, False)
 estilos = EstilosVisuales(ventana)
 frame_principal = estilos.crear_frame_principal()
-estilos.crear_titulo(frame_principal, "🔐 Recursive Caesar Shift Hash")
+estilos.crear_titulo(frame_principal, "🔐 Cesar Recursivo")
 
 entrada_cifrar, entry_posicion = estilos.crear_seccion_entrada(frame_principal)
 resultado_cifrar = estilos.crear_seccion_resultado(frame_principal)

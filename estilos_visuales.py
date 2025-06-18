@@ -10,7 +10,7 @@ class EstilosVisuales:
     
     def configurar_ventana(self):
         """Configura la apariencia general de la ventana"""
-        self.ventana.configure(bg='#b4cabd') 
+        self.ventana.configure(bg='#1f0034') 
         self.ventana.geometry("620x520")
         self.ventana.resizable(False, False)
         
@@ -37,8 +37,8 @@ class EstilosVisuales:
         style.configure('Accion.TButton',
                         font=('Segoe UI Semibold', 12),
                         padding=(15, 8),
-                        foreground='#4a5a6a',
-                        background='#b4cabd',
+                        foreground='#ea9267',
+                        background='#1f0034',
                         borderwidth=0,
                         focusthickness=3,
                         focuscolor='none')
@@ -99,7 +99,7 @@ class EstilosVisuales:
         resultado_cifrar = tk.StringVar(value="Resultado aparecerá aquí...")
         label_resultado = ttk.Label(frame_resultado, textvariable=resultado_cifrar,
                                    font=('Consolas', 12, 'bold'),
-                                   foreground='#27ae60',
+                                   foreground='#ea9267',
                                    background='white',
                                    anchor='center')
         label_resultado.pack(fill='x', pady=3)
