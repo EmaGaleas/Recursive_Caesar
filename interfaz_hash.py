@@ -6,7 +6,7 @@ def recursive_caesar_hash(s, n):
     if n == 0:
         return 0
     return (recursive_caesar_hash(s, n - 1) + (ord(s[(n - 1)]) + n)) % 256
-
+-
 def recursive_caesar_hash_con_pasos(s, n, pasos):
     if n == 0:
         pasos.append("H(0) = 0")
@@ -23,7 +23,7 @@ def cifrar():
         resultado_cifrar.set("⚠️ Ingresa texto para continuar")
         text_pasos.config(state="normal")
         text_pasos.delete("1.0", tk.END)
-        text_pasos.insert(tk.END, "📝 Esperando texto para procesar...")
+        text_pasos.insert(tk.END, "🤔 Esperando texto para procesar...")
         text_pasos.config(state="disabled")
         return
     try:
